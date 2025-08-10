@@ -1,1 +1,0 @@
-# INTPROG-Integrative-Programming-Technologies
