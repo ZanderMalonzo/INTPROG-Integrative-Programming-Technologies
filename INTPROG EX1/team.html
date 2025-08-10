@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yearner</title>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    </head>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    /* Pleasant, calm evergreen palette */
+    --bg-0: #F6F7F1;
+    --bg-1: #EEF2EC;
+    --text: #1F2937;      /* slate-800 */
+    --muted: #6B7280;     /* slate-500 */
+    --primary-700: #000000; /* deep evergreen */
+    --primary-600: #959b96; /* evergreen */
+    --accent: #fafafa;      /* soft moss */
+    --card: #FFFFFF;
+    --card-border: #E6EAE6;
+    --shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+* { margin: 0; box-sizing: border-box; }
+
+body {
+    margin: 0;
+    font-family: "Montserrat", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    background-size: cover;  /* Make it fill the page */
+    background-repeat: no-repeat; /* No tiling */
+    background-attachment: fixed;
+    background-image: url("backroundimgweb.jpg");
+}
+
+.banner {
+    background: linear-gradient(135deg, var(--primary-700), var(--primary-600));
+    color: #FFFFFF;
+    text-align: center;
+    height: 130px;
+}
+
+.logo h3 {
+    margin-top: 0;
+    font-family: "Archivo Black", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 14px;
+    padding: 8px;
+    color: #EAF4EE;
+}
+
+.logo span {    
+    color: var(--accent);
+}
+
+.headtitle h1 {
+    padding: 30px;
+    font-family: "Montserrat", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 23px;
+    color: #F7FAF9;
+
+}
+
+.groupname {
+    text-align: center;
+    background-color: var(--primary-600);
+    color: white;
+    font-family: "Archivo Black", sans-serif;
+    padding: 8px 12px;
+    letter-spacing: 0.5px;
+}
+
+.infogrid {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 30px 16px 50px;
+}
+.info {
+    max-width: 300px;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    padding: 26px;
+    margin: 10px;
+    text-align: center;
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.info:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 30px rgba(0,0,0,0.12);
+}
+
+/* Glass effect when backdrop-filter is supported */
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .info {
+        background: rgba(255, 255, 255, 0.6);
+        -webkit-backdrop-filter: blur(12px) saturate(120%);
+        backdrop-filter: blur(12px) saturate(100%);
+        border-color: rgba(4, 4, 4, 0.7); /* soften border on glass */
+    }
+}
+
+.pfp img {
+    height: 200px;
+    border-radius: 50%;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.1);
+}
+
+.name h3 {
+    padding: 14px 0 8px;
+    font-weight: 600;
+}
+
+.bio p {
+    padding-bottom: 8px;
+    color:black;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background: var(--card-border);
+    margin: 18px 0 10px;
+}
+
+.grid1, .grid2 {
+    display: flex;
+    justify-content: center;
+}
+
+.img img {
+    padding-left: 10px;
+    padding-right: 10px;
+    filter: saturate(1.05) contrast(0.98);
+}
+
+.grid1 {
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+.grid2 {
+    padding-top: 25px;
+}
+
+/* Media Queries for Responsive Design */
+
+/* Large Desktop (1200px and up) */
+@media (min-width: 1200px) {
+    .infogrid {
+        gap: 30px;
+    }
+    .info {
+        max-width: 350px;
+        margin: 100px 15px 20px 15px;
+    }
+}
+
+/* Desktop/Tablet Landscape (992px to 1199px) */
+@media (max-width: 1199px) and (min-width: 992px) {
+    .infogrid {
+        gap: 20px;
+    }
+    .info {
+        max-width: 280px;
+        margin: 80px 10px 20px 10px;
+        padding: 25px;
+    }
+    .pfp img {
+        height: 180px;
+    }
+}
+
+/* Tablet Portrait (768px to 991px) */
+@media (max-width: 991px) and (min-width: 768px) {
+    .infogrid {
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 0 20px;
+    }
+    .info {
+        max-width: calc(50% - 20px);
+        margin: 60px 10px 20px 10px;
+        padding: 20px;
+    }
+    .pfp img {
+        height: 160px;
+    }
+    .banner {
+        height: 120px;
+    }
+    .headtitle h1 {
+        padding: 25px;
+        font-size: 20px;
+    }
+}
+
+/* Mobile Landscape (576px to 767px) */
+@media (max-width: 767px) and (min-width: 576px) {
+    .infogrid {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        padding: 0 20px;
+    }
+    .info {
+        max-width: 100%;
+        width: 100%;
+        max-width: 500px;
+        margin: 40px 0 20px 0;
+        padding: 25px;
+    }
+    .pfp img {
+        height: 150px;
+    }
+    .banner {
+        height: 100px;
+    }
+    .headtitle h1 {
+        padding: 20px;
+        font-size: 18px;
+    }
+    .logo h3 {
+        font-size: 12px;
+        padding: 6px;
+    }
+    .grid1, .grid2 {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 5px;
+    }
+    .img img {
+        padding: 3px;
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* Mobile Portrait (up to 575px) */
+@media (max-width: 575px) {
+    .infogrid {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        padding: 0 15px;
+    }
+    .info {
+        max-width: 100%;
+        width: 100%;
+        margin: 30px 0 15px 0;
+        padding: 20px 15px;
+    }
+    .pfp img {
+        height: 120px;
+    }
+    .banner {
+        height: 90px;
+    }
+    .headtitle h1 {
+        padding: 15px;
+        font-size: 16px;
+    }
+    .logo h3 {
+        font-size: 11px;
+        padding: 5px;
+    }
+    .name h3 {
+        padding: 10px;
+        font-size: 16px;
+    }
+    .bio p {
+        padding-bottom: 15px;
+        font-size: 14px;
+    }
+    .grid1, .grid2 {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 3px;
+        padding: 15px 0 5px 0;
+    }
+    .img img {
+        padding: 2px;
+        width: 35px;
+        height: 35px;
+    }
+    .groupname {
+        padding: 5px;
+        font-size: 14px;
+    }
+}
+
+/* Extra Small Mobile (up to 375px) */
+@media (max-width: 375px) {
+    .infogrid {
+        padding: 0 10px;
+    }
+    .info {
+        padding: 15px 10px;
+    }
+    .pfp img {
+        height: 100px;
+    }
+    .banner {
+        height: 80px;
+    }
+    .headtitle h1 {
+        padding: 10px;
+        font-size: 14px;
+    }
+    .logo h3 {
+        font-size: 10px;
+        padding: 4px;
+    }
+    .name h3 {
+        padding: 8px;
+        font-size: 14px;
+    }
+    .bio p {
+        font-size: 12px;
+    }
+    .img img {
+        width: 30px;
+        height: 30px;
+    }
+}
+    </style>
+    <body>
+        <header class="banner">
+            <div class="logo">
+                <h3>Yearn<span>ers</span> </h3>
+                <hr>
+            </div>
+            <div class="headtitle">
+                <h1>Meet the Group</h1>
+            </div>
+        </header>
+        <div class="groupname">
+            <h1>Yearners</h1>
+        </div>
+
+        <div class="infogrid">
+            <div class="info">
+                <div class="pfp">
+                    <img src="pfp.jpg" alt="pfp">
+                </div>
+                <div class="name">
+                    <h3>John Vee Perez</h3>
+                </div>
+                <div class="bio">
+                    <p>🔹Passionate about Web Development</p>
+                    <p>🔹Batak mag Yearn</p>
+                </div>
+                <div class="grid1">
+                    <div class="img">
+                        <img src="icons8-html-5-48.png" alt="">
+                    </div>
+                    <div class="img">
+                        <img src="icons8-css3-48.png" alt="">
+                    </div>
+                    <div class="img">
+                        <img src="icons8-canva-50.png" alt="">
+                    </div>
+                </div>
+                <hr>
+                <div class="grid2">
+                    <div class="img">
+                        <img src="icons8-fb-50.png" alt="">
+                    </div>
+                    <div class="img">
+                        <img src="icons8-instagram-50.png" alt="">
+                    </div>
+                    <div class="img">
+                        <img src="icons8-youtube-50.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="pfp">
+                    <img src="zzandern.jpg" alt="pfp">
+                </div>
+                <div class="name">
+                    <h3>Zander Malonzo</h3>
+                </div>
+                <div class="bio">
+                    <p>🔹 Passionate about software development and Pang Character Development</p>
+                     <p> 🔹 Learning C++, Java, and C# — exploring web</p>
+                </div>
+                <div class="grid1">
+                    <div class="img">
+                        <img src="icons8-html-5-48.png" alt="">
+                    </div>
+                    <div class="img">
+                        <img src="icons8-css3-48.png" alt="">
+                    </div>
+                    <div class="img">
+                        <img src="icons8-canva-50.png" alt="">
+                    </div>
+                </div>
+                <hr>
+                <div class="grid2">
+                    <div class="img">
+                        <img src="icons8-fb-50.png" alt="">
+                    </div>
+                    <div class="img">
+                        <img src="icons8-instagram-50.png" alt="">
+                    </div>
+                    <div class="img">
+                        <img src="icons8-youtube-50.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="info">
+                <div class="pfp">
+                    <img src="stanley.jpg" alt="pfp">
+                </div>
+                <div class="name">
+                    <h3>Stanley Visaya</h3>
+                </div>
+                <div class="bio">
+                    <p>🔹Passionate about programming and gaming </p>
+                  <p>🔹Learning C# and C++</p>
+                </div>
+                <div class="grid1">
+                    <div class="img">
+                        <img src="icons8-html-5-48.png" alt="">
+                    </div>
+                    <div class="img">
+                        <img src="icons8-css3-48.png" alt="">
+                    </div>
+                    <div class="img">
+                        <img src="icons8-canva-50.png" alt="">
+                    </div>
+                </div>
+                <hr>
+                <div class="grid2">
+                    <div class="img">
+                        <img src="icons8-fb-50.png" alt="">
+                    </div>
+                    <div class="img">
+                        <img src="icons8-instagram-50.png" alt="">
+                    </div>
+                    <div class="img">
+                        <img src="icons8-youtube-50.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
