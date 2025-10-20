@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Lab 5: PHP + JSON + AJAX</title>
+</head>
+<body>
+  <h2>Welcome Form</h2>
+  <form id="welcomeForm">
+    <label for="name">Enter your name:</label>
+    <input type="text" id="name" name="name" required>
+    <button type="submit">Submit</button>
+  </form>
+
+  <div id="response"></div>
+
+  <script>
+    document.getElementById('welcomeForm').addEventListener('submit', function(e) {
+      e.preventDefault(); 
+
+      const name = document.getElementById('name').value;
+
+      fetch('lab5_backend.php', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ name: name })
+      })
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById('response').innerText = JSON.stringify(data);
+      })
+      .catch(error => {
+        document.getElementById('response').innerText = 'Error: ' + error;
+      });
+    });
+  </script>
+</body>
+</html>
+
