@@ -1,0 +1,19 @@
+1. readyState indicates the progress of the request. 
+    It change from 0 to 4.
+    0: Request not initialized 
+    1: Server connection established
+    2: Request received
+    3: Processing request
+    4: Request finished and response is ready
+ while status shows the HTTP response code from the server:
+    200 means success
+    404 means not found
+    500 means server error
+
+2. xhr.open('GET', 'https://example.com/data', true); 
+    OR  
+    xhr.open('GET', 'https://jsonplaceholder.typicode.com/posts/1', true);
+This tells the browser not to wait for the response before continuing with other tasks.
+
+3. Asynchronous communication in web applications keeps the interface responsive by allowing the browser to continue running while waiting for server data. 
+It improves user experience, enables faster performance through parallel requests, and prevents the page from freezing during data loading.
