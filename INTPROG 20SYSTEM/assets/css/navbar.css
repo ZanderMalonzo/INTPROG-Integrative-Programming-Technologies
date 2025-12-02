@@ -1,0 +1,136 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #c8c3a6;
+  padding: 10px 40px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  height: 80px;
+}
+
+.logo img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #1f3b2c;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  padding-bottom: 4px;
+  border-bottom: 3px solid transparent;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #8b5e34;
+  border-bottom-color: #8b5e34;
+}
+
+.nav-links a.active {
+  color: #8b5e34;
+  border-bottom-color: #8b5e34;
+}
+
+.profile img {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  vertical-align: middle;
+}
+
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: #fff;
+  width: 260px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  padding: 15px;
+  display: none;
+  z-index: 99;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+}
+
+.dropdown.show .dropdown-menu {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Profile header */
+.profile-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.profile-header img {
+  width: 32px; /* Reduced size for compactness */
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-name strong {
+  font-size: 15px;
+  display: block;
+}
+
+.profile-name span {
+  font-size: 13px;
+  color: #777;
+}
+
+/* Profile info */
+.profile-info p {
+  font-size: 14px;
+  color: #444;
+  margin-bottom: 8px;
+}
+
+/* Menu links */
+.dropdown-menu a {
+  display: block;
+  padding: 8px 0;
+  font-size: 14px;
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-menu a.logout {
+  color: #d9534f;
+}

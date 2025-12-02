@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Geologica:wght@100..900&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Geologica", sans-serif;
+    margin: 0;
+    height: 100vh;
+}
+
+.main {
+    display: flex;
+    height: 100vh;
+}
+
+
+.left {
+    flex: 1;
+    background-image: url("/INTPROG SYSTEM/assets/images/coffeebeansbg.png"); 
+    background-size: cover;
+    background-position: center;
+}
+
+.left img {
+    width: 150px;
+    border-radius: 50%;
+    margin: 50px 0 0 80px;
+}
+
+.login-container {
+    width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    height: 100vh;
+}
+
+
+.login-form {
+    height: 100%;
+    width: 100%;
+    max-width: 600px;
+    background: white;
+    padding: 40px;
+    border-radius: 0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    color: #1f3b2c;
+}
+
+.login-form span {
+    font-weight: 800;
+}
+
+.login-form h1 {
+    font-weight: 400;
+    font-size: 2rem;
+    margin: 50px 0 100px 0;
+    
+}
+
+.login-form p {
+    margin-bottom: 20px;
+    font-size: 1rem;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #1f3b2c;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: #1f3b2c;
+    outline: none;
+}
+
+.login-btn {
+    background: #1f3b2c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s;
+}
+
+.login-btn:hover {
+    background: #457f60;
+}
+
+.signup-link {
+    margin-top: 20px;
+    font-size: 0.9rem;
+}
+
+.signup-link a {
+    color: #478b67;
+    text-decoration: none;
+}
+
+.signup-link a:hover {
+    text-decoration: underline;
+}
+
+
+@media (max-width: 480px) {
+    .login-container {
+        padding: 20px;
+        margin: 20px;
+    }
+}

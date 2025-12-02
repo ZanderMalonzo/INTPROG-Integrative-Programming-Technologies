@@ -1,0 +1,181 @@
+.filter-tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: 10px 20px;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    color: #666;
+    transition: all 0.3s;
+}
+
+.filter-tab:hover {
+    border-color: #c8c3a6;
+    color: #c8c3a6;
+}
+
+.filter-tab.active {
+    background: #c8c3a6;
+    color: #1f3b2c;
+    border-color: #c8c3a6;
+}
+
+.delivery-order-card {
+    position: relative;
+}
+
+.delivery-actions {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 2px solid #e0e0e0;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.status-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    color: #fff;
+}
+
+.confirm-btn {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.confirm-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(17, 153, 142, 0.4);
+}
+
+.preparing-btn {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+.preparing-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(245, 87, 108, 0.4);
+}
+
+.ready-btn {
+    background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+}
+
+.ready-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(79, 172, 254, 0.4);
+}
+
+.delivery-btn {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+}
+
+.delivery-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(250, 112, 154, 0.4);
+}
+
+.complete-btn {
+    background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);
+    font-size: 16px;
+    padding: 14px 28px;
+}
+
+.complete-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(48, 207, 208, 0.5);
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    border-radius: 8px;
+    color: #fff;
+    font-weight: 600;
+    z-index: 10000;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: slideIn 0.3s;
+    max-width: 400px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(400px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.notification.success {
+    background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+}
+
+.notification.error {
+    background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+}
+
+
+.order-status.out_for_delivery {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.order-status.ready {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+.order-status.preparing {
+    background: #cfe2ff;
+    color: #084298;
+}
+
+.order-status.confirmed {
+    background: #d1e7dd;
+    color: #0f5132;
+}
+
+
+@media (max-width: 768px) {
+    .filter-tabs {
+        gap: 8px;
+    }
+    
+    .filter-tab {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+    
+    .delivery-actions {
+        flex-direction: column;
+    }
+    
+    .status-btn {
+        width: 100%;
+    }
+    
+    .notification {
+        right: 10px;
+        left: 10px;
+        max-width: none;
+    }
+}
+
